@@ -42,7 +42,7 @@ movie_tile_content = '''
                     <div class="movie-tile sm-6-12 md-4-12 lg-4-12">
                         <div class="info">
                             <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/{poster}" alt="{title}" data-youtube-id="{youtube_id}" data-overview="{overview}">
-                            <h2>{title}</h2>
+                            <h2 data-youtube-id="{youtube_id}" data-overview="{overview}">{title}</h2>
                         </div>
                     </div>
 '''
