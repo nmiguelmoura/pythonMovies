@@ -14,10 +14,11 @@ nmm.Main=(function(){
 
     Main.prototype._movieClicked=function(event){
         //get data-youtube-id attribute form div
-        var youtubeId=event.target.getAttribute('data-youtube-id');
+        var youtubeId=event.target.getAttribute('data-youtube-id'),
+            overview=event.target.getAttribute('data-overview');
 
         //show modal window
-        this._modalWindow.show(youtubeId);
+        this._modalWindow.show(youtubeId,overview);
     };
 
     Main.prototype._addMovieTilesListeners=function(){

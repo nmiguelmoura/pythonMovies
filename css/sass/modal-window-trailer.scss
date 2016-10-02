@@ -22,6 +22,10 @@
     padding:10px;
     height:200px;
     background:white;
+
+    .modal-text{
+        display:none;
+    }
   }
 
   iFrame{
@@ -45,14 +49,24 @@
   @media screen and (min-width:768px){
     .close-btn{
       width:40px;
-      top:calc(50% - 260px);
+      top:50px;
       right:calc(50% - 330px);
     }
 
     .video{
       width:640px;
-      top:calc(50% - 240px);
+      top:60px;
       left:calc(50% - 320px);
+      height:570px;
+
+      .modal-text{
+        display:block;
+        font-size:14px;
+        font-size:0.875em;
+      }
+    }
+
+    iFrame{
       height:480px;
     }
   }

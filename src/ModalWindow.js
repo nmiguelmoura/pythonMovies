@@ -22,6 +22,14 @@ nmm.ModalWindow=(function(){
 
         //destroy src from iFrame
         this._iFrame.src='';
+        this._modalText.innerHTML='';
+    };
+
+    ModalWindow.prototype._createModalText=function(){
+        //create modal text
+        this._modalText=document.createElement('p');
+        this._modalText.className='modal-text';
+        this._videoDiv.appendChild(this._modalText);
     };
 
     ModalWindow.prototype._createiFrame=function(){
@@ -36,17 +44,21 @@ nmm.ModalWindow=(function(){
         this._iFrameCreated=true;
     };
 
-    ModalWindow.prototype._playMovie=function(youtubeId){
+    ModalWindow.prototype._playMovie=function(youtubeId,overview){
         if(!this._iFrameCreated){
             //if iframe was not created
             this._createiFrame();
+            this._createModalText();
         }
 
         //change src of iframe
         this._iFrame.src='https://www.youtube.com/embed/'+youtubeId+'?autoplay=1&html5=1';
+
+        //display overview
+        this._modalText.innerHTML=overview;
     };
 
-    ModalWindow.prototype.show=function(movieUrl){
+    ModalWindow.prototype.show=function(youtubeId,overview){
         //show modal window if exists
         if(this.exists){
             //show modal window
@@ -57,7 +69,7 @@ nmm.ModalWindow=(function(){
             this._closeBtn.addEventListener('click',this._closeBind,false);
 
             //show movie
-            this._playMovie(movieUrl);
+            this._playMovie(youtubeId,overview);
         }
     };
 

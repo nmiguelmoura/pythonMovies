@@ -41,7 +41,7 @@ main_page_body = '''
 movie_tile_content = '''
                     <div class="movie-tile sm-6-12 md-4-12 lg-4-12">
                         <div class="info">
-                            <img src="{poster}" alt="{title}" data-youtube-id="{youtube_id}">
+                            <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/{poster}" alt="{title}" data-youtube-id="{youtube_id}" data-overview="{overview}">
                             <h2>{title}</h2>
                         </div>
                     </div>
@@ -64,6 +64,7 @@ def create_movie_tile(list_of_movies):
             title=mov.title,
             poster=mov.poster,
             youtube_id=youtube_id,
+            overview=mov.overview
         )
 
     #get content
