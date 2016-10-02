@@ -18,7 +18,7 @@ module.exports=function(grunt){
             },
             build:{
                 files:{
-
+                    'src/main.min.js':['src/ModalWindow.js','src/Main.js']
                 }
             }
         }

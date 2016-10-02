@@ -6,13 +6,17 @@ var nmm=nmm||{};
 nmm.Main=(function(){
     'use strict';
 
+    //class that initiates functionality and animation
+
     function Main(){
         this._init();
     }
 
     Main.prototype._movieClicked=function(event){
-        //TODO params
+        //get data-youtube-id attribute form div
         var youtubeId=event.target.getAttribute('data-youtube-id');
+
+        //show modal window
         this._modalWindow.show(youtubeId);
     };
 
@@ -24,11 +28,15 @@ nmm.Main=(function(){
     };
 
     Main.prototype._animateTiles=function(){
+        //animates the opacity of movie_tiles
+        //shows one each half-second
         var count=0,length=this._movieTiles.length,interval=500;
         this.int=setInterval(function(){
             if(count<length){
+                //if some are not showing
                 this._movieTiles[count].style.opacity=1;
             }else{
+                //if all are animated
                 clearInterval(this.int);
             }
             count++;
@@ -36,10 +44,12 @@ nmm.Main=(function(){
     };
 
     Main.prototype._getMovieTilesReferences=function(){
+        //get the DOM references to the class movie-tile
         this._movieTiles=document.getElementsByClassName('movie-tile');
     };
 
     Main.prototype._setupModalWindow=function(){
+        //launchs modal window that shows trailer
         this._modalWindow=new nmm.ModalWindow();
     };
 
@@ -53,4 +63,5 @@ nmm.Main=(function(){
     return Main;
 })();
 
+//instanciate class Main
 nmm.main=new nmm.Main();
