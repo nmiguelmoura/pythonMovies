@@ -1,0 +1,59 @@
+.modal-window-trailer{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:rgba(0,0,0,0.5);
+
+  .close-btn{
+    position:absolute;
+    width:30px;
+    right:5px;
+    top:85px;
+    cursor:pointer;
+  }
+
+  .video{
+    position:absolute;
+    top:100px;
+    width:100%;
+    padding:10px;
+    height:200px;
+    background:white;
+  }
+
+  iFrame{
+    width:100%;
+    height:100%;
+    border:none;
+  }
+
+  @media screen and(min-width:480px){
+    .close-btn{
+      top:0;
+      right:0;
+    }
+
+    .video{
+      top:10px;
+      height:300px;
+    }
+  }
+
+  @media screen and (min-width:768px){
+    .close-btn{
+      width:40px;
+      top:calc(50% - 260px);
+      right:calc(50% - 330px);
+    }
+
+    .video{
+      width:640px;
+      top:calc(50% - 240px);
+      left:calc(50% - 320px);
+      height:480px;
+    }
+  }
+}
