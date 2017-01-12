@@ -6,13 +6,12 @@ Example of Python project that generates an HTML page with a list of movies. Eac
 - Shows a list of movies based on title and youtube url
 - Performs search in TMDB for poster images and overviews
 - Responsive design mobile-first
-- shows trailer and overview for each movie when clicked
+- Shows modal window with trailer and overview info from TMDB for each movie when clicked
 
 ###Requirements
 Python 2.7
 
 ###Run
-Run main.py to generate web page
-
-###How to get
-[GitHub](https://github.com/nmiguelmoura/pythonMovies)
+- Clone repository to your system 
+- Navigate to project directory
+- Run run main.py to generate web page `python main.py`
